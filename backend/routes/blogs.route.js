@@ -1,11 +1,18 @@
 import express from 'express';
-import { getAll, postController } from '../controllers/blogs.controller.js';
+import { getAll, getBlogId, getRecentBlogs, postController, updateBlogId } from '../controllers/blogs.controller.js';
 
 const router = express.Router();
 
-//POSRT 
+
 router.post("/post", postController);
-router.get("/getall", getAll)
+router.get("/getAll", getAll);
+router.get("/getRecentBlogs", getRecentBlogs);
+router.get("/getBlog/:id", getBlogId);
+router.put("/updateBlog/:id", updateBlogId);
+
+
+
+
 
 
 export default router;
